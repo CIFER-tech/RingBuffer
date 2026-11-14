@@ -1,6 +1,6 @@
 using System;
 
-namespace CIFER.Tech.Collections
+namespace CIFER.tech.RingBuffer
 {
     /// <summary>
     /// 固定サイズの輪になった待ち行列 (リングバッファ)。先に入れた要素から順に取り出す。

@@ -10,7 +10,7 @@
 ## 使い方
 
 ```csharp
-using CIFER.Tech.Collections;
+using CIFER.tech.RingBuffer;
 
 var buffer = new RingBuffer<int>(capacity: 3);
 
@@ -55,7 +55,7 @@ while (buffer.TryDequeue(out int item))
 "tech.cifer.ringbuffer": "https://github.com/CIFER-tech/RingBuffer.git?path=/Unity"
 ```
 
-アセンブリは `CIFER.Tech.RingBuffer` (Unity のアセンブリ定義)。自分のアセンブリ定義から使うときは、`references` に `CIFER.Tech.RingBuffer` を足す。
+アセンブリは `CIFER.tech.RingBuffer` (Unity のアセンブリ定義)。自分のアセンブリ定義から使うときは、`references` に `CIFER.tech.RingBuffer` を足す。
 
 ## リポジトリの構成
 

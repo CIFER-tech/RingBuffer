@@ -1,7 +1,7 @@
-using CIFER.Tech.Collections;
+using CIFER.tech.RingBuffer;
 using Xunit;
 
-namespace CIFER.Tech.Collections.Tests;
+namespace CIFER.tech.RingBuffer.Tests;
 
 public class RingBufferTests
 {
