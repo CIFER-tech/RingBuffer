@@ -1,6 +1,10 @@
 {
   "name": "tech.cifer.ringbuffer",
   "version": "3.0.0",
+  "license": "MIT",
+  "documentationUrl": "https://github.com/CIFER-tech/RingBuffer#readme",
+  "changelogUrl": "https://github.com/CIFER-tech/RingBuffer/releases",
+  "licensesUrl": "https://github.com/CIFER-tech/RingBuffer/blob/main/LICENSE",
   "displayName": "RingBuffer",
   "description": "固定サイズのリングバッファ (輪になった待ち行列)。入れる・取り出すで GC が起きず、満杯のときは古い要素を捨てる。スレッドに対して安全。",
   "unity": "2021.2",
