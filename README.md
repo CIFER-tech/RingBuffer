@@ -55,7 +55,7 @@ while (buffer.TryDequeue(out int item))
 "tech.cifer.ringbuffer": "https://github.com/CIFER-tech/RingBuffer.git?path=/Unity"
 ```
 
-DLL は `Unity/Runtime/CIFER.tech.RingBuffer.dll` (アセンブリ名 `CIFER.tech.RingBuffer`)。自分のアセンブリ定義から使うときは、`overrideReferences` を有効にして、`precompiledReferences` に `CIFER.tech.RingBuffer.dll` を足す。
+DLL は `Unity/Runtime/CIFER.tech.RingBuffer.dll` (アセンブリ名 `CIFER.tech.RingBuffer`)。自分のアセンブリ定義の `references` に `CIFER.tech.RingBuffer` を書いていた場合は、それを削除する (DLL は自動で参照される)。`overrideReferences` を有効にしているアセンブリ定義だけ、`precompiledReferences` に `CIFER.tech.RingBuffer.dll` を足す。
 
 ## リポジトリの構成
 
