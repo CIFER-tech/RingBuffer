@@ -1,7 +1,7 @@
 # RingBuffer
 
 固定サイズのリングバッファ (輪になった待ち行列) `RingBuffer<T>`。C#, netstandard2.1。
-.NET のアプリからも、Unity (2021.2+) からも使える。
+.NET のアプリからも、Unity (2021.2+) からも使える。Unity のパッケージには、ビルドした DLL を同梱する。
 
 - 作るときに 1 度だけ領域を確保する。入れる・取り出すでは GC が起きない (`T` を構造体にすると、要素ごとの確保も起きない)。
 - 満杯のときに入れると、いちばん古い要素を捨てる。取り出す側が遅れても、メモリは増えない。
@@ -43,27 +43,31 @@ while (buffer.TryDequeue(out int item))
 
 ## Unity から使う
 
-`Packages/manifest.json` の `dependencies` に、このリポジトリの `Unity` フォルダを足す。
+`Packages/manifest.json` の `dependencies` に、このリポジトリの `src/RingBuffer.Unity` フォルダを足す。
 
 ```json
-"tech.cifer.ringbuffer": "file:../../../RingBuffer/Unity"
+"tech.cifer.ringbuffer": "file:../../../RingBuffer/src/RingBuffer.Unity"
 ```
 
 パスは `Packages/manifest.json` からの相対パス。Git から入れるときは、次のように書く。
 
 ```json
-"tech.cifer.ringbuffer": "https://github.com/CIFER-tech/RingBuffer.git?path=/Unity"
+"tech.cifer.ringbuffer": "https://github.com/CIFER-tech/RingBuffer.git?path=/src/RingBuffer.Unity"
 ```
 
-アセンブリは `CIFER.tech.RingBuffer` (Unity のアセンブリ定義)。自分のアセンブリ定義から使うときは、`references` に `CIFER.tech.RingBuffer` を足す。
+DLL は `src/RingBuffer.Unity/Runtime/CIFER.tech.RingBuffer.dll` (アセンブリ名 `CIFER.tech.RingBuffer`)。自分のアセンブリ定義の `references` に `CIFER.tech.RingBuffer` を書いていた場合は、それを削除する (DLL は自動で参照される)。`overrideReferences` を有効にしているアセンブリ定義だけ、`precompiledReferences` に `CIFER.tech.RingBuffer.dll` を足す。
 
 ## リポジトリの構成
 
 | パス | 内容 |
 | --- | --- |
-| `Unity/` | UPM パッケージ (`tech.cifer.ringbuffer`)。ソースは `Unity/Runtime/RingBuffer.cs` の 1 つだけ。 |
-| `src/RingBuffer/` | .NET のライブラリ。`Unity/Runtime/RingBuffer.cs` を、そのままビルドする。 |
+| `src/RingBuffer.Unity/` | UPM パッケージ (`tech.cifer.ringbuffer`)。`Runtime/` にビルドした DLL を同梱する。`main` に `src/RingBuffer` の変更が入ると、GitHub Actions が DLL を作り直してコミットする。 |
+| `src/RingBuffer/` | .NET のライブラリ。ソースは `src/RingBuffer/RingBuffer.cs` の 1 つだけ。 |
 | `tests/RingBuffer.Tests/` | xUnit のテスト。 |
+
+## .NET から使う
+
+タグ (`v*`) を付けると、GitHub Actions が `.nupkg` を作って、GitHub の Releases に添付する。nuget.org には公開しない。取り出した `.nupkg` を置いたフォルダを、NuGet のローカルのソースにして使う。
 
 ## ビルドとテスト
 

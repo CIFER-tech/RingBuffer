@@ -1,6 +1,6 @@
 {
   "name": "tech.cifer.ringbuffer",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "license": "MIT",
   "documentationUrl": "https://github.com/CIFER-tech/RingBuffer#readme",
   "changelogUrl": "https://github.com/CIFER-tech/RingBuffer/releases",
