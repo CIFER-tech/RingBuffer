@@ -31,13 +31,13 @@ jobs:
 
       - name: Copy build output into Unity package
         run: |
-          cp src/RingBuffer/bin/Release/netstandard2.1/CIFER.tech.RingBuffer.dll Unity/Runtime/CIFER.tech.RingBuffer.dll
+          cp src/RingBuffer/bin/Release/netstandard2.1/CIFER.tech.RingBuffer.dll src/RingBuffer.Unity/Runtime/CIFER.tech.RingBuffer.dll
 
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Unity/Runtime/CIFER.tech.RingBuffer.dll
+          git add src/RingBuffer.Unity/Runtime/CIFER.tech.RingBuffer.dll
           if git diff --cached --quiet; then
             echo "CIFER.tech.RingBuffer.dll is already up to date."
           else

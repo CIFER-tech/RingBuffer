@@ -43,25 +43,25 @@ while (buffer.TryDequeue(out int item))
 
 ## Unity から使う
 
-`Packages/manifest.json` の `dependencies` に、このリポジトリの `Unity` フォルダを足す。
+`Packages/manifest.json` の `dependencies` に、このリポジトリの `src/RingBuffer.Unity` フォルダを足す。
 
 ```json
-"tech.cifer.ringbuffer": "file:../../../RingBuffer/Unity"
+"tech.cifer.ringbuffer": "file:../../../RingBuffer/src/RingBuffer.Unity"
 ```
 
 パスは `Packages/manifest.json` からの相対パス。Git から入れるときは、次のように書く。
 
 ```json
-"tech.cifer.ringbuffer": "https://github.com/CIFER-tech/RingBuffer.git?path=/Unity"
+"tech.cifer.ringbuffer": "https://github.com/CIFER-tech/RingBuffer.git?path=/src/RingBuffer.Unity"
 ```
 
-DLL は `Unity/Runtime/CIFER.tech.RingBuffer.dll` (アセンブリ名 `CIFER.tech.RingBuffer`)。自分のアセンブリ定義の `references` に `CIFER.tech.RingBuffer` を書いていた場合は、それを削除する (DLL は自動で参照される)。`overrideReferences` を有効にしているアセンブリ定義だけ、`precompiledReferences` に `CIFER.tech.RingBuffer.dll` を足す。
+DLL は `src/RingBuffer.Unity/Runtime/CIFER.tech.RingBuffer.dll` (アセンブリ名 `CIFER.tech.RingBuffer`)。自分のアセンブリ定義の `references` に `CIFER.tech.RingBuffer` を書いていた場合は、それを削除する (DLL は自動で参照される)。`overrideReferences` を有効にしているアセンブリ定義だけ、`precompiledReferences` に `CIFER.tech.RingBuffer.dll` を足す。
 
 ## リポジトリの構成
 
 | パス | 内容 |
 | --- | --- |
-| `Unity/` | UPM パッケージ (`tech.cifer.ringbuffer`)。`Unity/Runtime/` にビルドした DLL を同梱する。`main` に `src/RingBuffer` の変更が入ると、GitHub Actions が DLL を作り直してコミットする。 |
+| `src/RingBuffer.Unity/` | UPM パッケージ (`tech.cifer.ringbuffer`)。`Runtime/` にビルドした DLL を同梱する。`main` に `src/RingBuffer` の変更が入ると、GitHub Actions が DLL を作り直してコミットする。 |
 | `src/RingBuffer/` | .NET のライブラリ。ソースは `src/RingBuffer/RingBuffer.cs` の 1 つだけ。 |
 | `tests/RingBuffer.Tests/` | xUnit のテスト。 |
 
