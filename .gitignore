@@ -30,40 +30,10 @@ coverage*.xml
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# ---- Unity (Unity側の受信プロジェクトを同じリポジトリに置く場合) ----
-[Ll]ibrary/
-[Tt]emp/
-[Ll]ogs/
-[Uu]ser[Ss]ettings/
-[Mm]emoryCaptures/
-[Bb]uilds/
-*.pidb.meta
-*.pdb.meta
-*.mdb.meta
-sysinfo.txt
-*.apk
-*.aab
-*.unitypackage
-# Unity が生成する C# プロジェクト/ソリューション
-/Unity/*.csproj
-/Unity/*.sln
-
 # ---- OS ----
 .DS_Store
 Thumbs.db
 desktop.ini
-
-# ---- 計測・キャリブレーションの生成物 ----
-# 撮影したグレースケール画像、軌跡ログ、スキャン生データ
-captures/
-scans/raw/
-logs/
-trajectory*.csv
-*.pcap
-
-# ---- ネイティブSDK(OptiTrack Camera SDK のバイナリ等) ----
-# ライセンス上、再配布しないものはここに置いて除外する
-third_party/optitrack/
 
 # ---- 秘密情報・ローカル設定 ----
 *.local.json
