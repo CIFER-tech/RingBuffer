@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>CIFER.Tech.RingBuffer</AssemblyName>
     <RootNamespace>CIFER.Tech.Collections</RootNamespace>
     <LangVersion>9.0</LangVersion>
     <Nullable>disable</Nullable>

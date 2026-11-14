@@ -5,6 +5,8 @@
 互換性のない変更。
 
 - 名前空間を `Cifer.Collections` から `CIFER.Tech.Collections` に変更 (組織名 CIFER.tech に合わせる)。使う側の `using` を直す必要がある。
+- アセンブリ (Unity のアセンブリ定義と .NET のアセンブリ) の名前を `RingBuffer` から `CIFER.Tech.RingBuffer` に変更。アセンブリ定義から参照している側は、`references` を直す必要がある。
+- パッケージの作者名を `CIFER.tech` に変更。
 
 ## [1.0.0] - 2026-11-14
 
