@@ -57,7 +57,10 @@ namespace Cifer.Collections
         {
             lock (_lock)
             {
-                int tail = (_head + _count) % _items.Length;
+                // _head + _count は、容量が int.MaxValue の半分を超えると、あふれる。足す前に、容量から引いて比べる。
+                int tail = _head >= _items.Length - _count
+                    ? _head - (_items.Length - _count)
+                    : _head + _count;
                 _items[tail] = item;
 
                 if (_count < _items.Length)
