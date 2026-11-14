@@ -1,4 +1,4 @@
-using Cifer.Collections;
+using CIFER.Tech.Collections;
 using Xunit;
 
 namespace RingBuffer.Tests;

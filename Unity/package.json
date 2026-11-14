@@ -1,6 +1,6 @@
 {
   "name": "tech.cifer.ringbuffer",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "displayName": "RingBuffer",
   "description": "固定サイズのリングバッファ (輪になった待ち行列)。入れる・取り出すで GC が起きず、満杯のときは古い要素を捨てる。スレッドに対して安全。",
   "unity": "2021.2",

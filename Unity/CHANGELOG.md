@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.0] - 2026-11-14
+
+互換性のない変更。
+
+- 名前空間を `Cifer.Collections` から `CIFER.Tech.Collections` に変更 (組織名 CIFER.tech に合わせる)。使う側の `using` を直す必要がある。
+
 ## [1.0.0] - 2026-11-14
 
 - 固定サイズのリングバッファ `RingBuffer<T>` を追加。

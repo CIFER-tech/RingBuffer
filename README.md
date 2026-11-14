@@ -10,7 +10,7 @@
 ## 使い方
 
 ```csharp
-using Cifer.Collections;
+using CIFER.Tech.Collections;
 
 var buffer = new RingBuffer<int>(capacity: 3);
 

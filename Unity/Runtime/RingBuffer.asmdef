@@ -1,6 +1,6 @@
 {
     "name": "RingBuffer",
-    "rootNamespace": "Cifer.Collections",
+    "rootNamespace": "CIFER.Tech.Collections",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
