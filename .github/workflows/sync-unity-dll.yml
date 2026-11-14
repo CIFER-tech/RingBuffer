@@ -20,7 +20,10 @@ jobs:
     runs-on: ubuntu-latest
     if: github.actor != 'github-actions[bot]'
     steps:
+      # 順番待ちのあいだに、前の実行が DLL をコミットしていることがあるので、main の最新を取り出す
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - uses: actions/setup-dotnet@v4
         with:
